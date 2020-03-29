@@ -1,9 +1,8 @@
-
-n = int(input())
-
-for _ in range(n):
+result = int(input())
+for _ in range(result):
     word = input()
-    for i in range(1,len(word)):
+    for i in range(1, len(word)):
         if word.find(word[i-1]) > word.find(word[i]):
-            n -= 1
-print(n)
+            result -= 1
+            break
+print(result)
