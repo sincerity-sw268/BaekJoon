@@ -1,17 +1,21 @@
-alphabet ="abcdefghijklmnopqrstuvwxyz"
-s = str(input().upper())
-alp_list = [0 for _ in range(26)]
-
-
+#1
+s = input().lower()
+cnt = [0 for i in range(26)]
 for i in s:
-    a = ord(i) - 65
-    alp_list[a] += 1
-num = max(alp_list)
-
-if alp_list.count(num) >=2:
+    cnt[ord(i)-97] += 1
+m = max(cnt)
+if cnt.count(m) > 1:
     print("?")
 else:
-    print(chr(alp_list.index(num)+65))
+    print(chr(cnt.index(m)+65))
+
+#2
+s = input().lower()
+cnt = {c: s.count(c) for c in set(s)}
+m = [k for k in cnt.keys() if cnt[k] == max(cnt.values())]
+print(m[0]) if len(m) == 1 else print('?')
+
+
 
 
 
